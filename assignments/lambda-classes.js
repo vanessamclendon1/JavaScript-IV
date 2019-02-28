@@ -43,7 +43,7 @@ class Instructor extends Person{
     }
 }
 
-class Student extends Instructor{
+class Student extends Person{
     constructor(partof){
         super(partof);
         this.previousBackground = partof.previousBackground;
