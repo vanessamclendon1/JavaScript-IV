@@ -22,10 +22,11 @@ class Instructor extends Person{
         this.catchPhrase = teacher.catchPhrase;
     }
     demo() {
-        return `Today we are learning about ${this.subject}.`;
+        return `Today we are learning about ${this.favLanguage}.`;
     }
     grade(){
         return `${student.name} received a perfect score on ${this.subject}.`
+        
     }
 }
 
@@ -59,7 +60,7 @@ class Project_Manager extends Student{
         return `${this.name} announces to ${this.channel} @channel standy times!`
     }
     debugsCode(){
-        return `${this.name} debugs ${student.name} code on ${this.subject}.`;
+        return `${this.name} debugs ${student.name} code on ${this.favSubjects}.`;
     }
 
 }
@@ -69,8 +70,7 @@ const fred = new Instructor({
     age: '37',
     location:'Bedrock',
     gender: 'male',
-    favLanguage: 'JavaScript, Python, Elm',
-    specialty: 'Redux',
+    favLanguage: ['JavaScript', 'Python', 'Elm',],
     catchPhrase: 'Dont forget the homies'
 
 });
@@ -97,7 +97,9 @@ const don = new Project_Manager ({
 
 
 
- console.log(vanessa.name); // student name 
+        console.log(fred.speak()); // instructor introduction
+        console.log(fred.demo()); // student talking 
+      //console.log(vanessa.name); // student name 
 //     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 //     console.log(swordsman.healthPoints); // 15
 //     console.log(mage.name); // Bruce
