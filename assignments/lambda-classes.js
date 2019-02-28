@@ -47,7 +47,18 @@ class Student{
 }
 
 class Project_Manager{
-    
+    constructor(pm){
+        this.gradClassName = pm.gradClassName;
+        this.favInstructor = pm.favInstructor;
+    }
+    /*Methods*/
+    standUp(){
+        return `${this.name} announces to ${this.channel} @channel standy times!`
+    }
+    debugsCode(){
+        return `${this.name} debugs ${student.name} code on ${this.subject}.`;
+    }
+
 }
 
 
