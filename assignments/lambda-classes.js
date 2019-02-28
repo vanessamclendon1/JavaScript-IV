@@ -34,6 +34,12 @@ class Instructor extends Person{
             student.grade - adveragePt;
             return `${adveragePt} adverage was  subtract from  ${student.name}'s grade. ${student.name} current grade is ${student.grade}`;
         }
+        else 
+        {
+            student.grade += adveragePt;
+            return `${student.name}'s grade at the time is ${student.grade}`;
+        }
+        
     }
 }
 
