@@ -115,7 +115,8 @@ const don = new Project_Manager ({
         console.log(vanessa.listsSubjects()); // student talking 
         console.log(don.gender); //Project manager gender
         console.log(don.debugsCode) // project manager debug
-        console.log(fred.demo()); //fred f
+        //console.log(fred.demo()); //fred f
+        console.log(don.standUp('Web18')); //standup
 
       //console.log(vanessa.name); // student name 
 //     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
