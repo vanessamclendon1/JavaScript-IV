@@ -14,8 +14,9 @@ class Person{
     }
 }
 
-class Instructor{
+class Instructor extends Person{
     constructor(teacher){
+        super(teacher);
         this.specialty = teacher.specialty;
         this.favLanguage = teacher.favLanguage;
         this.catchPhrase = teacher.catchPhrase;
@@ -28,15 +29,16 @@ class Instructor{
     }
 }
 
-class Student{
+class Student extends Instructor{
     constructor(partof){
+        super(partof);
         this.previousBackground = partof.previousBackground;
         this.className = partof.className;
-        this.favSubjects = favSubjects.className;
+        this.favSubjects = partof.className;
     }
     /**Methods */
     listsSubjects(){
-        return `${favSubjects}`;
+        return `favorite subjects are ${this.favSubjects}`;
     }
     PRAssignment(){
        return `${this.favSubjects} `;
@@ -46,8 +48,9 @@ class Student{
     }
 }
 
-class Project_Manager{
+class Project_Manager extends Student{
     constructor(pm){
+        super(pm);
         this.gradClassName = pm.gradClassName;
         this.favInstructor = pm.favInstructor;
     }
@@ -61,12 +64,47 @@ class Project_Manager{
 
 }
 
-
-const fred = new Person({
+const fred = new Instructor({
     name: 'Fred',
-    age: 'Bedrock',
+    age: '37',
+    location:'Bedrock',
     gender: 'male',
-    favLanguage: 'JavaScript',
-    specialty: 'Front-end',
+    favLanguage: 'JavaScript, Python, Elm',
+    specialty: 'Redux',
     catchPhrase: 'Dont forget the homies'
+
 });
+
+const vanessa = new Student ({
+    name: 'Vanessa',
+    age: 30,
+    location: 'Atlanta GA',
+    gender: 'Female',
+    previousBackground:'Project Management and Tier 3 Technical Support',
+    className: "Web18",
+    favSubjects: ['HTML', 'CSS', 'JavaScript',],
+
+});
+
+const don = new Project_Manager ({
+    name: 'don',
+    age: 27,
+    location: 'Chicago',
+    gender: 'Male',
+    gradClassName: 89,
+    favInstructor: 'Josh'
+});
+
+console.log()
+
+// console.log(student.name); // student name 
+//     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
+//     console.log(swordsman.healthPoints); // 15
+//     console.log(mage.name); // Bruce
+//     console.log(swordsman.team); // The Round Table
+//     console.log(mage.weapons); // Staff of Shamalama
+//     console.log(archer.language); // Elvish
+//     console.log(archer.greet()); // Lilith offers a greeting in Elvish.
+//     console.log(mage.takeDamage()); // Bruce took damage.
+//     console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+  

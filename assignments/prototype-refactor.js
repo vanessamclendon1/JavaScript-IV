@@ -130,10 +130,7 @@ Prototype Refactor
       healthPoints: 10,
       name: 'Lilith',
       team: 'Forest Kingdom',
-      weapons: [
-        'Bow',
-        'Dagger',
-      ],
+      weapons: ['Bow', 'Dagger', ],
       language: 'Elvish',
     });
   
