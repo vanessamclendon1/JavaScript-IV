@@ -21,11 +21,11 @@ class Instructor extends Person{
         this.favLanguage = teacher.favLanguage;
         this.catchPhrase = teacher.catchPhrase;
     }
-    demo(subject) {
-        return `Today we are learning about ${subject}.`;
+    demo() {
+        return `Today we are learning about ${this.favLanguage}.`;
     }
-    grade(student, subject){
-        return `${student.name} received a perfect score on ${subject}.`
+    grade(student){
+        return `${student.name} received a perfect score on ${this.favSubjects}.`
         
     }
     adverage(student) {
@@ -62,6 +62,7 @@ class Student extends Person{
     }
 }
 
+
 class Project_Manager extends Student{
     constructor(pm){
         super(pm);
@@ -70,7 +71,7 @@ class Project_Manager extends Student{
     }
     /*Methods*/
     standUp(){
-        return `${this.name} announces to ${this.channel} @channel standy times!`
+        return `${this.name} announces to ${channel} @channel standy times!`
     }
     debugsCode(){
         return `${this.name} debugs ${student.name} code on ${this.favSubjects}.`;
@@ -111,7 +112,11 @@ const don = new Project_Manager ({
 
 
         console.log(fred.speak()); // instructor introduction
-        console.log(fred.demo()); // student talking 
+        console.log(vanessa.listsSubjects()); // student talking 
+        console.log(don.gender); //Project manager gender
+        console.log(don.debugsCode) // project manager debug
+        console.log(fred.demo()); //fred f
+
       //console.log(vanessa.name); // student name 
 //     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 //     console.log(swordsman.healthPoints); // 15
