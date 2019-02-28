@@ -28,6 +28,13 @@ class Instructor extends Person{
         return `${student.name} received a perfect score on ${subject}.`
         
     }
+    adverage(student) {
+        let adveragePt = Math.round(Math.random() * 100);
+        if (student.grade >= 100){
+            student.grade - adveragePt;
+            return `${adveragePt} adverage was  subtract from  ${student.name}'s grade. ${student.name} current grade is ${student.grade}`;
+        }
+    }
 }
 
 class Student extends Instructor{
