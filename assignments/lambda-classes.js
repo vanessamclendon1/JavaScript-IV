@@ -52,13 +52,13 @@ class Student extends Person{
     }
     /**Methods */
     listsSubjects(){
-        return `favorite subjects are ${this.favSubjects}`;
+        return  `${this.favSubjects}.map (subs => console.log(subs))`;
     }
     PRAssignment(){
-       return `${this.favSubjects} `;
+       return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge() {
-        //return `{this.}`
+        return `${this.name} has begun sprint challenge on ${subject}`
     }
 }
 
