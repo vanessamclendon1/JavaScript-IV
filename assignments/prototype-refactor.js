@@ -17,17 +17,29 @@ Prototype Refactor
   *
 */
 
-function GameObject(obj){
-    this.createdAt = obj.createdAt;
-    this.name = obj.createdAt;
-    this.dimensions = obj.dimensions;
-  }
+// function GameObject(obj){
+//     this.createdAt = obj.createdAt;
+//     this.name = obj.createdAt;
+//     this.dimensions = obj.dimensions;
+//   }
   
-  GameObject.prototype.destroy = function(){
-    return `${this.name} was removed from the game.`;
-  }
+//   GameObject.prototype.destroy = function(){
+//     return `${this.name} was removed from the game.`;
+//   }
   
-  /**call */
+ /**new code */
+
+ class GameObject {
+     constructor(gam){
+        this.createdAt = gam.createdAt;
+        this.name = gam.createdAt;
+        this.dimensions = gam.dimensions;
+
+     }
+     destroy() {
+        return `${this.name} was removed from the game.`;
+        }
+  }// Parent
   
   
   /*
