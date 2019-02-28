@@ -17,16 +17,6 @@ Prototype Refactor
   *
 */
 
-// function GameObject(obj){
-//     this.createdAt = obj.createdAt;
-//     this.name = obj.createdAt;
-//     this.dimensions = obj.dimensions;
-//   }
-  
-//   GameObject.prototype.destroy = function(){
-//     return `${this.name} was removed from the game.`;
-//   }
-  
  /**new code */
 
  class GameObject {
@@ -48,26 +38,22 @@ Prototype Refactor
     * takeDamage() // prototype method -> returns the string '<object name> took damage.'
     * should inherit destroy() from GameObject's prototype
   */
-  
-  function CharacterStats (att) {
-    GameObject.call(this, att);
-    this.hp = att.healthpoints;
-    this.name = att.name;
-  }
-  
-  CharacterStats.prototype =
-  Object.create(GameObject.prototype);
-  
-  CharacterStats.prototype.takeDamage = function() {
-    return `${this.name} took damage.`;
-  };
-  
-  
-   /** call */
-  // function CharacterStats (stat){
-  //   GameObject.call(this, stat);
-  
-  // }
+
+    /**new code */
+/**Added extend to replace object.create() ) */
+/**added a super() to take care of method and this */
+
+  class CharacterStats extends GameObject{
+      constructor(point){
+        super(point);
+        this.healthPoints = point.healthpoints;
+        this.name = point.name;
+      }
+      /**Method */
+      takeDamage(){
+        return `${this.name} took damage.`;
+      }
+    }
   
   /*
     === Humanoid (Having an appearance or character resembling that of a human.) ===
@@ -78,19 +64,19 @@ Prototype Refactor
     * should inherit destroy() from GameObject through CharacterStats
     * should inherit takeDamage() from CharacterStats
   */
-   
-  function Humanoid (final) {
-    CharacterStats.call(this, final);
-    this.faction = final.faction;
-    this.weapons = final.weapons;
-    this.language = final.language;
-  }
-  Humanoid.prototype = 
-  Object.create(CharacterStats.prototype);
-  
-  Humanoid.prototype.greet = function () {
-    return `${this.name} offers a greeting in ${this.language}.`;};
-  
+
+    /**new code */
+    /**added a super() to take care of method and this */
+    class Humanoid extends CharacterStats{
+        constructor(end){
+            super(end);
+            this.faction = end.faction;
+            this.weapons = end.weapons;
+            this.language = end.language;
+        }
+        greet(){
+            return `${this.name} offers a greeting in ${this.language}.`;};
+    }
   
   /*
     * Inheritance chain: GameObject -> CharacterStats -> Humanoid
