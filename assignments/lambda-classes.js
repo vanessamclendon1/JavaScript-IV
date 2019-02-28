@@ -21,11 +21,11 @@ class Instructor extends Person{
         this.favLanguage = teacher.favLanguage;
         this.catchPhrase = teacher.catchPhrase;
     }
-    demo() {
-        return `Today we are learning about ${this.favLanguage}.`;
+    demo(subject) {
+        return `Today we are learning about ${subject}.`;
     }
-    grade(){
-        return `${student.name} received a perfect score on ${this.subject}.`
+    grade(student, subject){
+        return `${student.name} received a perfect score on ${subject}.`
         
     }
 }
