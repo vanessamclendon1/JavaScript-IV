@@ -95,9 +95,9 @@ const don = new Project_Manager ({
     favInstructor: 'Josh'
 });
 
-console.log()
 
-// console.log(student.name); // student name 
+
+ console.log(vanessa.name); // student name 
 //     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
 //     console.log(swordsman.healthPoints); // 15
 //     console.log(mage.name); // Bruce
