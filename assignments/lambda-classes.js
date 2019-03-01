@@ -21,11 +21,11 @@ class Instructor extends Person{
         this.favLanguage = teacher.favLanguage;
         this.catchPhrase = teacher.catchPhrase;
     }
-    demo() {
-        return `Today we are learning about ${this.favLanguage}.`;
+    demo(subject) {
+        return `Today we are learning about ${subject}.`;
     }
     grade(student){
-        return `${student.name} received a perfect score on ${this.favSubjects}.`
+        return `${student.name} received a perfect score on ${subject}.`
         
     }
     adverage(student) {
@@ -54,7 +54,7 @@ class Student extends Person{
     listsSubjects(){
         return  `${this.favSubjects}.map (subs => console.log(subs))`;
     }
-    PRAssignment(){
+    PRAssignment(subject){
        return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge() {
@@ -70,7 +70,7 @@ class Project_Manager extends Student{
         this.favInstructor = pm.favInstructor;
     }
     /*Methods*/
-    standUp(){
+    standUp(channel){
         return `${this.name} announces to ${channel} @channel standy times!`
     }
     debugsCode(){
@@ -109,23 +109,17 @@ const don = new Project_Manager ({
     favInstructor: 'Josh'
 });
 
-
+                    /**consol logs  */
 
         console.log(fred.speak()); // instructor introduction
         console.log(vanessa.listsSubjects()); // student talking 
         console.log(don.gender); //Project manager gender
         console.log(don.debugsCode) // project manager debug
-        //console.log(fred.demo()); //fred f
+        console.log(fred.demo("JavaScript")); //fred f
         console.log(don.standUp('Web18')); //standup
+        console.log(don.PRAssignment("JavaScript")); // instructor 
+        console.log(vanessa.speak()); // student speak
+        console.log(don.speak());
 
-      //console.log(vanessa.name); // student name 
-//     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
-//     console.log(swordsman.healthPoints); // 15
-//     console.log(mage.name); // Bruce
-//     console.log(swordsman.team); // The Round Table
-//     console.log(mage.weapons); // Staff of Shamalama
-//     console.log(archer.language); // Elvish
-//     console.log(archer.greet()); // Lilith offers a greeting in Elvish.
-//     console.log(mage.takeDamage()); // Bruce took damage.
-//     console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
+
   
